@@ -35,20 +35,33 @@ This workbook accompanies [Week 4 of the DWD class](https://github.com/itp-dwd/2
 
 **Solution**: [02_solution](./workbook/02_solution)
 
-1.  Using a Node core library
-2.  Using a Node core library, advanced
-3.  Using multiple JS files with `module.exports`/`export`
-4.  `npm` and npmjs.org
-5.  `npm init`
-6.  `npm install` and `.gitignore`
-7.  `express` static server
-8.  `express` routes returning HTML
-9.  `express` routes returning JSON
-10. Using Postman
-11. Using a JSON object as a data store
-12. Creating a `POST`/Create route
-13. Creating a `PUT`/Update route
-14. Creating a `DELETE`/Delete route
-15. Using a file-based data store
-16. Using other APIs - Getting Around CORS
-17. Connecting your API to a client
+### 03 Using Node core libraries
+**Challenge**:
+- Create a file called `pizzaToppings.json`.
+- Copy the contents this [Pizza Toppings JSON](https://raw.githubusercontent.com/dariusk/corpora/master/data/foods/pizzaToppings.json) file to `pizzaToppings.json`.
+- Create a file called `pizzaGenerator.js`.
+- Import the `fs` (File System) core library. 
+- Import the contents of the file into your JS using `readFileSync`.
+- Parse the contents of the file as JSON.
+- Use the topping choices to generate a random pizza.
+- Output your random pizza as a string using `console.log`
+- Run your script from the command line and generate a few random pizzas.
+
+
+
+1.  Using a Node core library, advanced
+2.  Using multiple JS files with `module.exports`/`export`
+3.  `npm` and npmjs.org
+4.  `npm init`
+5.  `npm install` and `.gitignore`
+6.  `express` static server
+7.  `express` routes returning HTML
+8.  `express` routes returning JSON
+9.  Using Postman
+10. Using a JSON object as a data store
+11. Creating a `POST`/Create route
+12. Creating a `PUT`/Update route
+13. Creating a `DELETE`/Delete route
+14. Using a file-based data store
+15. Using other APIs - Getting Around CORS
+16. Connecting your API to a client
