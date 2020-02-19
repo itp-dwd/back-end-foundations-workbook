@@ -82,18 +82,45 @@ This workbook accompanies [Week 4 of the DWD class](https://github.com/itp-dwd/2
 - try running `git reset .`, then `git add .`, then `git status`. what happens? (the node_modules folder is no longer staged for commit, but *ignored*)
 - commit your changes using `git commit -m "initial commit"`
 
-### 06 Using multiple JS files
+**Solution**: [05_solution](./workbook/05_solution)
 
-1.  Using a Node core library, advanced
-2.  Using multiple JS files with `module.exports`/`export`
-3.  `express` static server
-4.  `express` routes returning HTML
-5.  `express` routes returning JSON
-6.  Using Postman
-7.  Using a JSON object as a data store
-8.  Creating a `POST`/Create route
-9.  Creating a `PUT`/Update route
-10. Creating a `DELETE`/Delete route
-11. Using a file-based data store
-12. Using other APIs - Getting Around CORS
-13. Connecting your API to a client
+### 06 Using multiple JS files
+**Challenge**:
+- Start from the previous challenge
+- Remove the part of your code from `bandNameGenerator.js` that calls the function and `console.log`s its return value
+- Export the function `getBandName` using `module.exports`
+- Create another file called `main.js`
+- Import `getBandName` by using `require`
+- Call `getBandName`, `console.log` its return value, and test that everything is working by running `node main.js`
+
+**Solution**: [06_solution](./workbook/06_solution)
+
+### 07 Express static server
+**Challenge**:
+- Create a new empty folder
+- Create a file called `server.js`
+- Create a `.gitignore` file to ignore the `node_modules/` folder
+- Run `npm init` to create a new Node project, and call it "first-api". Make sure the entry point is `server.js`
+- Run `npm install --save express`
+- Create a folder called `public`
+- In this folder, create a file called `index.html` and create a barebones HTML page.
+- Go to your favorite search engine and search "express static server". The official Express documentation should come up, which will tell you to include a line that looks like `app.use(express.static('public'))`. But... what's app? Perplexed, go back to your search engine results
+- Try to find a blog post that has the full code—it should only be four lines of code!
+- As a hint, you need to (1) import the `express` library, (2) create an `express` `app`, (3) specify your folder to serve, and (4) start the server on a specific port
+- Start your server by running `npm start`
+- Go to `http://localhost:3000` (or whichever port you chose) to make sure it's working
+- (Note that this is the same as `python -m SimpleHTTPServer`, it's serving *all* of the files in `public/`)
+
+**Solution**: [07_solution](./workbook/07_solution)
+
+1.  `express` static server
+2.  `express` routes returning HTML
+3.  `express` routes returning JSON
+4.  Using Postman
+5.  Using a JSON object as a data store
+6.  Creating a `POST`/Create route
+7.  Creating a `PUT`/Update route
+8.  Creating a `DELETE`/Delete route
+9.  Using a file-based data store
+10. Using other APIs - Getting Around CORS
+11. Connecting your API to a client
