@@ -175,9 +175,19 @@ This workbook accompanies [Week 4 of the DWD class](https://github.com/itp-dwd/2
 
 **Solution**: [11_solution](./workbook/11_solution)
 
+### 12 `DELETE` Request
+**Challenge**:
+- Start with the Code from Challenge 11
+- Add a route to delete a topping `DELETE /topping/:name`. What's this ":name" thing? It's called a request parameter.
+- This looks like `app.delete("/topping/:name, func)`.
+- In `func`, you can access `:name` with `req.param.name`
+- Then, remove the name from the `toppings.pizzaToppings` array
+- Return JSON saying that the request was successful, something like `res.json({ success: true })`
+- Try deleting a topping. Make a `DELETE /toppings/pineapple` request in Postman.
+- Then, in Postman, try `GET /toppings` to see if the topping was added successfully.
 
-3.  Creating a `PUT`/Update route
-4.  Creating a `DELETE`/Delete route
-5.  Using a file-based data store
-6.  Using other APIs - Getting Around CORS
-7.  Connecting your API to a client
+### 13 Data Persistence - File-based data store
+
+### 14 Using other APIs
+
+### 15 Connecting your custom API to your client application
