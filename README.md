@@ -112,6 +112,10 @@ This workbook accompanies [Week 4 of the DWD class](https://github.com/itp-dwd/2
 - (Note that this is the same as `python -m SimpleHTTPServer`, it's serving *all* of the files in `public/`)
 
 **Solution**: [07_solution](./workbook/07_solution)
+
+### 08 Serving HTML on a specific route
+**Challenge**:
+- Start from your solution to Challenge 07.
 - Create a file in public called `style.css`
 - Add a style that makes the `background-color` `lightblue`.
 - Include `style.css` in your `index.html`
@@ -129,19 +133,26 @@ This workbook accompanies [Week 4 of the DWD class](https://github.com/itp-dwd/2
 - Test that it all works by running `npm start`.
 - What happens when you remove the line `app.use(express.static("public"));` and restart the server? Why?
 
-### 08 Serving HTML on a specific route
-**Challenge**:
-- Start from your solution to Challenge 07.
-- 
+**Solution**: [08_solution](./workbook/08_solution)
 
-1.  `express` static server
-2.  `express` routes returning HTML
-3.  `express` routes returning JSON
-4.  Using Postman
-5.  Using a JSON object as a data store
-6.  Creating a `POST`/Create route
-7.  Creating a `PUT`/Update route
-8.  Creating a `DELETE`/Delete route
-9.  Using a file-based data store
-10. Using other APIs - Getting Around CORS
-11. Connecting your API to a client
+### 09 Return JSON from a route
+**Challenge**:
+- Start from your code in Challenge 08.
+- Copy the file `pizzaToppings.json` from Challenge 03 to a folder in your root directory called `/data`
+- In your `server.js`, import the contents of `pizzaToppings.json` as JSON using `fs.readFile` and `path` into a variable called `toppings`
+- Create a new route `/toppings` that returns the value of toppings as JSON. You'll need to use `res.json()`
+- Start your server by running `npm start`
+- Test that it is working by going to `http://localhost:3000/toppings`
+
+**Solution**: [09_solution](./workbook/09_solution)
+
+
+
+2.  Using Postman
+3.  Using a JSON object as a data store
+4.  Creating a `POST`/Create route
+5.  Creating a `PUT`/Update route
+6.  Creating a `DELETE`/Delete route
+7.  Using a file-based data store
+8.  Using other APIs - Getting Around CORS
+9.  Connecting your API to a client
