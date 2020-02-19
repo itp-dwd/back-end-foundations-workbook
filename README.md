@@ -146,13 +146,38 @@ This workbook accompanies [Week 4 of the DWD class](https://github.com/itp-dwd/2
 
 **Solution**: [09_solution](./workbook/09_solution)
 
+### 10 Using Postman
+**Challenge**:
+- Download an application called [Postman](https://www.postman.com/)
+- Skip signing up and go straight to opening the application
+- Click "create a new request"
+- Start the server from Challenge 09
+- Enter the toppings url from Challenge 9: `http://localhost:3000/toppings`
+- Click "Send". What happens?
+- Try changing "GET" to "POST" and hit "Send" again. What happens?
+- Postman is going to be our testing tool as we create our API—get comfortable with it!
+
+**Solution**: [10_solution](./workbook/10_solution.png)
+
+### Using a JSON object as a data store
+**Challenge**:
+- Start with the code from Challenge 09
+- We're going to create an API endpoint that adds a new topping to our `toppings` object. The topping name will be passed as part of the HTTP request, and then our request handler (the function that is connected to the endpoint) will add it to the list.
+- In `server.js`, after you create `app` but *before* any of the routes, include the line `app.use(express.json());`
+- Create an endpoint called `app.post("/toppings", func)`. This means that the HTTP verb used is `POST` rather than `GET`
+- in `func`, the request body (`req.body`) will contain our new topping as a JSON object (`{"topping": "octopus"}`)
+- then push the value of the topping into the `toppings.pizzaToppings` array
+- Return JSON saying that the request was successful, something like `res.json({ success: true })`
+- Start the server.
+- Try adding a new topping using Postman. Make a `POST` request to `/toppings`, with a JSON body (click on the "Body" tab, then click "raw", then click "Text" and change it to "JSON")
+- Then, in Postman, try `GET /toppings` to see if the topping was added successfully.
+- Try stopping and restarting the server, and then using Postman to make a request to `GET /toppings`. Is the topping you created still there? What happened?
+
+**Solution**: [11_solution](./workbook/11_solution)
 
 
-2.  Using Postman
-3.  Using a JSON object as a data store
-4.  Creating a `POST`/Create route
-5.  Creating a `PUT`/Update route
-6.  Creating a `DELETE`/Delete route
-7.  Using a file-based data store
-8.  Using other APIs - Getting Around CORS
-9.  Connecting your API to a client
+3.  Creating a `PUT`/Update route
+4.  Creating a `DELETE`/Delete route
+5.  Using a file-based data store
+6.  Using other APIs - Getting Around CORS
+7.  Connecting your API to a client
