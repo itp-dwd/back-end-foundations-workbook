@@ -4,12 +4,8 @@ const fs = require("fs");
 
 const app = express();
 
-let toppings = {};
-fs.readFile(path.join(__dirname, "./data/pizzaToppings.json"), (err, contents) => { // error first callback
-  const obj = JSON.parse(contents);
-  // technically valid JSON can't be an array
-  toppings = obj;
-});
+const contents = fs.readFileSync(path.join(__dirname, "./data/pizzaToppings.json"));
+const toppings = JSON.parse(contents);
 
 app.use(express.static("public"));
 app.use(express.json());

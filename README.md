@@ -186,7 +186,20 @@ This workbook accompanies [Week 4 of the DWD class](https://github.com/itp-dwd/2
 - Try deleting a topping. Make a `DELETE /toppings/pineapple` request in Postman.
 - Then, in Postman, try `GET /toppings` to see if the topping was added successfully.
 
+**Solution**: [12_solution](./workbook/12_solution)
+
 ### 13 Data Persistence - File-based data store
+**Challenge**:
+- Start with the code from challenge 12
+- Let's update the code so that changes to the pizza toppings are *persisted*. This means that when you stop the server, the changes to the pizza toppings don't disappear!
+- We'll need to change the code to read/write from the `pizzaToppings.json` file every time changes are made to the pizza toppings, rather than just reading from the file once!
+- First, update `GET /toppings` to read from `pizzaToppings.json`. Since we'll need to do this for all of our endpoints, let's put it in a function called `getToppings`, which will return the JSON parsed content of `readFileSync` rather than store it in a global variable.
+- Then, write a function called `addTopping` and one called `deleteTopping`, both of which will call `getToppings`. After updating the toppings, the JSON object will be written back to `pizzaToppings.json` using `writeFileSync`. Note that you will need to use `JSON.stringify` on `toppings` before you can write it to the file. From both of these functions, return the updated list of toppings.
+- Update `POST /toppings` and `DELETE /toppings/:name` to use these functions. These endpoints should return the updated list of toppings.
+- Test that it is all working using Postman. You can look in `data/pizzaToppings.json` to see if the file is actually getting updated. 
+- **Optional**: You could move the toppings helper functions into a file called `toppings.controller.js`, which exports these functions, and then you could import them into your `server.js` file.
+
+**Solution**: [13_solution](./workbook/13_solution)
 
 ### 14 Using other APIs
 
