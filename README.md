@@ -47,6 +47,8 @@ This workbook accompanies [Week 4 of the DWD class](https://github.com/itp-dwd/2
 - Output your random pizza as a string using `console.log`
 - Run your script from the command line and generate a few random pizzas.
 
+**Solution**: [03_solution](./workbook/03_solution)
+
 ### 04 `npm install` and `npmjs.com`
 **Challenge**:
 - Go to the website https://npmjs.com
@@ -59,20 +61,39 @@ This workbook accompanies [Week 4 of the DWD class](https://github.com/itp-dwd/2
 - Notice that this creates a folder called `node_modules` and a file called `package-lock.json`
 - Write a script that combines these two libraries in a fun way.
 
+**Solution**: [04_solution](./workbook/04_solution)
+
+### 05 `npm init`, `.gitignore`, `npm install --save`
+**Challenge**:
+- Copy all of the files from Challenge 04 into a new folder for Challenge 05.
+- run `npm init` within from within that folder.
+- fill in all of the information (what is in parenthesis is the default value)
+- open the file that was just created, `package.json` and take a look at the contents
+- run `npm install --save metal-name`
+- run `npm install --save food-words`
+- look again at the contents of `package.json`, do you notice anything different?
+- open the folder in finder by running `open .`
+- drag the folder `node_modules` to the Trash
+- try running `node bandNameGenerator.js`. what happens? (it doesn't work, right?)
+- run `npm install` and then try running `node bandNameGenerator.js`. what happens? (it works, right? and the `node_modules/` folder is back)
+- turn the project into a git repository by running `git init`
+- try running `git add .`, then `git status`. what happens? (all of the files in node_modules are staged for commit, right?)
+- create a file called `.gitignore`, and add a line that simply says `node_modules`
+- try running `git reset .`, then `git add .`, then `git status`. what happens? (the node_modules folder is no longer staged for commit, but *ignored*)
+- commit your changes using `git commit -m "initial commit"`
+
+### 06 Using multiple JS files
 
 1.  Using a Node core library, advanced
 2.  Using multiple JS files with `module.exports`/`export`
-3.  `npm` and npmjs.org
-4.  `npm init`
-5.  `npm install` and `.gitignore`
-6.  `express` static server
-7.  `express` routes returning HTML
-8.  `express` routes returning JSON
-9.  Using Postman
-10. Using a JSON object as a data store
-11. Creating a `POST`/Create route
-12. Creating a `PUT`/Update route
-13. Creating a `DELETE`/Delete route
-14. Using a file-based data store
-15. Using other APIs - Getting Around CORS
-16. Connecting your API to a client
+3.  `express` static server
+4.  `express` routes returning HTML
+5.  `express` routes returning JSON
+6.  Using Postman
+7.  Using a JSON object as a data store
+8.  Creating a `POST`/Create route
+9.  Creating a `PUT`/Update route
+10. Creating a `DELETE`/Delete route
+11. Using a file-based data store
+12. Using other APIs - Getting Around CORS
+13. Connecting your API to a client
