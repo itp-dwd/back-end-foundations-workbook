@@ -112,6 +112,27 @@ This workbook accompanies [Week 4 of the DWD class](https://github.com/itp-dwd/2
 - (Note that this is the same as `python -m SimpleHTTPServer`, it's serving *all* of the files in `public/`)
 
 **Solution**: [07_solution](./workbook/07_solution)
+- Create a file in public called `style.css`
+- Add a style that makes the `background-color` `lightblue`.
+- Include `style.css` in your `index.html`
+- Move your `index.html` to a folder in the root directory called `views`
+- Copy `index.html` into a new file in the same directory called `about.html`
+- Change the copy on `about.html` so it reads "About my Cute Website".
+- Add a link to `/about` in `index.html`
+- Add two routes to your `server.js`: One that serves `index.html` from `/`, and one that serves `about.html` from `/about`. This is going to take a few lines of code, so let's break it down.
+- Include a node core library called `path`
+- The syntax for adding a new route is `app.get(url, func)`, where `func` is a function that specifies what to return when a client makes an HTTP request to that url
+- `url` is "/"
+- `func` has two parameters, `req` and `res`, short for `request` and `response`. `res.sendFile` will be used to specify the html file to send back, which takes a path to a file as an argument.
+- The path is going to look like `path.join(__dirname, "views/index/html`). Look at the documentation for path and try to understand this.
+- Follow similar steps to add a route for `/about`.
+- Test that it all works by running `npm start`.
+- What happens when you remove the line `app.use(express.static("public"));` and restart the server? Why?
+
+### 08 Serving HTML on a specific route
+**Challenge**:
+- Start from your solution to Challenge 07.
+- 
 
 1.  `express` static server
 2.  `express` routes returning HTML
