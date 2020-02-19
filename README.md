@@ -47,6 +47,17 @@ This workbook accompanies [Week 4 of the DWD class](https://github.com/itp-dwd/2
 - Output your random pizza as a string using `console.log`
 - Run your script from the command line and generate a few random pizzas.
 
+### 04 `npm install` and `npmjs.com`
+**Challenge**:
+- Go to the website https://npmjs.com
+- Search "metal name"
+- Click on a library called "metal-name"
+- Take some time to look at the usage instructions, and to look at the project on GitHub
+- Go back and search "food words"
+- Click on a library called "food-words"
+- Install both of these libraries locally by running `npm install <library-name>`
+- Notice that this creates a folder called `node_modules` and a file called `package-lock.json`
+- Write a script that combines these two libraries in a fun way.
 
 
 1.  Using a Node core library, advanced
