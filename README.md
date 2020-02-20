@@ -201,7 +201,60 @@ This workbook accompanies [Week 4 of the DWD class](https://github.com/itp-dwd/2
 
 **Solution**: [13_solution](./workbook/13_solution)
 
-### 14 Using other APIs - API Key
+### 14 Connecting your custom API to your client application, pt 1
+**Challenge**:
+Use client-side JS to interact with to your custom API, fetch all pizza toppings and render them to HTML
+- Start with your code from Challenge 13.
+- In your `public` folder, add a file called `client.js`.
+- Import `client.js` in your `index.html`.
+- When the DOM loads, make a request to `GET /toppings` to get the list of toppings
+- Use this list to generate a <li>'s, and insert these into the innerHTML of a <ul>
+
+**Solution**: [14_solution](./workbook/14_solution)
+
+### 15 Connecting your custom API to your client application, pt 2
+**Challenge**:
+Use client-side JS to add an interface to add pizza toppings
+- Start with your code from Challenge 14.
+- Add a <form> with a text <input>. Give the form an `id="topping-form"`, and the input a `name="topping"`
+- Add an event handler for when the form is submitted, with an event parameter `event`
+- To prevent the page from refreshing (the default behavior for a form), add the line `event.preventDefault()`
+- Use `fetch` to `POST` to the API. To do this, you'll need to add an `options` object:
+```js
+const options = { method: "POST",
+  body: JSON.stringify({topping: topping}),
+  headers: {
+    'Content-Type': 'application/json'
+  },
+}
+```
+- When the API returns, re-render the list of toppings with the new topping
+- Check `data/pizzaToppings.json` to see if your topping got successfully added!
+
+**Solution**: [15_solution](./workbook/15_solution)
+
+### 16 Connecting your custom API to your client application, pt 3
+**Challenge**:
+Use client-side JS to add an interface to delete pizza toppings
+- Start with your code from Challenge 15.
+- Update `ToppingsList` to add a remove button to each <li>
+- Add an `onclick=removeTopping(event)` to each <button>
+- Add a `data-topping="${topping}"` attribute to each <li>, so that in the onclick handler, we can figure out which topping we are trying to delete
+- Write a function called `removeTopping`, which accesses the topping by `event.target.parentElement.dataset.topping`
+- In this function, make a request to `DELETE /toppings/${topping}`. You'll need to add an options object to the fetch request:
+```js
+const options = {
+  method: "DELETE",
+  headers: {
+    'Content-Type': 'application/json'
+  }
+};
+```
+- When the request returns, re-render the list of toppings, so that the one that is deleted is removed from the list
+- Check `data/pizzaToppings.json` to see if your topping got successfully removed!
+
+### 17 Using other APIs - API Key
+**Challenge**:
 - Answer the question: Why do APIs have authentication and keys?
 - Copy your code from Challenge 09
 - Delete the folder `data/` and its contents
@@ -213,11 +266,9 @@ This workbook accompanies [Week 4 of the DWD class](https://github.com/itp-dwd/2
 - Create a route called `GET /gryffindor` that fetches all of the characters in Gryffindor from the Potter API. You'll need to use the method `https.get()`, and construct your URL in the same way you would when using `fetch` in the browser. Don't forget to include the API key in the url!
 - Start the server and test that your API endpoint works using Postman.
 
-**Solution**: [14_solution](./workbook/14_solution)
+**Solution**: [17_solution](./workbook/17_solution)
 
-### 15 Connecting your custom API to your client application
-
-### 16 Using other APIs - Twitter
+### 18 Using other APIs - Twitter
 **Challenge**:
 - Start with the code from challenge 06
 - Answer the following question: Why would you want to make your API requests from Node, rather from the browser? 
