@@ -253,6 +253,8 @@ const options = {
 - When the request returns, re-render the list of toppings, so that the one that is deleted is removed from the list
 - Check `data/pizzaToppings.json` to see if your topping got successfully removed!
 
+**Solution**: [16_solution](./workbook/16_solution)
+
 ### 17 Using other APIs - API Key
 **Challenge**:
 - Answer the question: Why do APIs have authentication and keys?
@@ -278,4 +280,10 @@ const options = {
 - Register for a Twitter API developer account. Create an *individual* account. 
 - Create a Twitter Application. 
 - Create a new file called `config.json`, and add a line to your `.gitignore` that is just `config.json`
-
+- Add your Twitter credentials to this file. Check the file `config.example.json` for reference
+- Copy and paste your code from example 17 to import your `config.json` file
+- Install the npm library `twitter` to make it user to use the Twitter API: `npm install --save twitter`
+- Follow the `twitter` documentation to authenticate with your api tokens
+- Follow the `twitter` documentation to make a tweet from one of the band names
+- Run the script by running `node main.js`
+- Check your Twitter account to see if it worked!
