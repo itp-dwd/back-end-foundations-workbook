@@ -287,3 +287,5 @@ const options = {
 - Follow the `twitter` documentation to make a tweet from one of the band names
 - Run the script by running `node main.js`
 - Check your Twitter account to see if it worked!
+
+**Solution**: [18_solution](./workbook/18_solution)
