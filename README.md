@@ -201,6 +201,30 @@ This workbook accompanies [Week 4 of the DWD class](https://github.com/itp-dwd/2
 
 **Solution**: [13_solution](./workbook/13_solution)
 
-### 14 Using other APIs
+### 14 Using other APIs - API Key
+- Answer the question: Why do APIs have authentication and keys?
+- Copy your code from Challenge 09
+- Delete the folder `data/` and its contents
+- Create a file called `config.json` and add a line to your `.gitignore`: `config.json`
+- Go to the [Harry Potter API](https://www.potterapi.com/) and create an API key.
+- Add it to your `config.json` under the key `"POTTER_API"` (look at `config.example.json` in the solution for reference)
+- Change the line in `server.js` that was reading `pizzaToppings.json` to read `config.json` to fetch the Potter API key
+- Install the library `isomorphic-unfetch` to use `fetch` in Node
+- Create a route called `GET /gryffindor` that fetches all of the characters in Gryffindor from the Potter API. You'll need to use the method `https.get()`, and construct your URL in the same way you would when using `fetch` in the browser. Don't forget to include the API key in the url!
+- Start the server and test that your API endpoint works using Postman.
+
+**Solution**: [14_solution](./workbook/14_solution)
 
 ### 15 Connecting your custom API to your client application
+
+### 16 Using other APIs - Twitter
+**Challenge**:
+- Start with the code from challenge 06
+- Answer the following question: Why would you want to make your API requests from Node, rather from the browser? 
+- (Answer: (1) API key security, (2) CORS)
+- (1) You will not want to expose your API keys client side (for example, if you were using the Twitter API, someone could take your keys and then post from your account)
+- Sometimes you can't make AJAX requests from the browser to certain APIs, when it is enabled, it is called CORS
+- Register for a Twitter API developer account. Create an *individual* account. 
+- Create a Twitter Application. 
+- Create a new file called `config.json`, and add a line to your `.gitignore` that is just `config.json`
+
