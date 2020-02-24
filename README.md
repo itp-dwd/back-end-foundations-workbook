@@ -128,7 +128,7 @@ This workbook accompanies [Week 4 of the DWD class](https://github.com/itp-dwd/2
 - The syntax for adding a new route is `app.get(url, func)`, where `func` is a function that specifies what to return when a client makes an HTTP request to that url
 - `url` is "/"
 - `func` has two parameters, `req` and `res`, short for `request` and `response`. `res.sendFile` will be used to specify the html file to send back, which takes a path to a file as an argument.
-- The path is going to look like `path.join(__dirname, "views/index/html`). Look at the documentation for path and try to understand this.
+- The path is going to look like `path.join(__dirname, "views/index.html`). Look at the documentation for path and try to understand this.
 - Follow similar steps to add a route for `/about`.
 - Test that it all works by running `npm start`.
 - What happens when you remove the line `app.use(express.static("public"));` and restart the server? Why?
