@@ -4,7 +4,7 @@ This workbook accompanies [Week 4 of the DWD class](https://github.com/itp-dwd/2
 
 ## Overview
 
-### 00 Instal Node
+### 00 Install Node
 **Challenge**:
 - Follow the [Installing Node.js guide](https://github.com/itp-dwd/2020-spring/blob/master/guides/installing-nodejs.md).
 - Install `nvm` on your computer
