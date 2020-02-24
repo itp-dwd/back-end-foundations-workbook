@@ -255,7 +255,7 @@ const options = {
 
 **Solution**: [16_solution](./workbook/16_solution)
 
-### 17 Using other APIs - API Key
+### 17 Using other APIs - Keeping your API Key Secret
 **Challenge**:
 - Answer the question: Why do APIs have authentication and keys?
 - Copy your code from Challenge 09
