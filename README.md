@@ -19,7 +19,7 @@ This workbook accompanies [Week 4 of the DWD class](https://github.com/itp-dwd/2
 -  Start the Node REPL by running `node` on the command line
 -  Create a variable called `greeting`, and assign it to "Hello DWD!"
 -  Inspect the value of `greeting` using console.log
--  Create a function called `greet` that takes a name as an argument, and returns a String "Hello, <name>!"
+-  Create a function called `greet` that takes a name as an argument, and returns a String "Hello, ::name::!"
 -  Call `greet` with the argument "Cassie"
 -  exit the REPL by inputting `.exit`
   
@@ -159,7 +159,7 @@ This workbook accompanies [Week 4 of the DWD class](https://github.com/itp-dwd/2
 
 **Solution**: [10_solution](./workbook/10_solution.png)
 
-### Using a JSON object as a data store
+### 11 Using a JSON object as a data store
 **Challenge**:
 - Start with the code from Challenge 09
 - We're going to create an API endpoint that adds a new topping to our `toppings` object. The topping name will be passed as part of the HTTP request, and then our request handler (the function that is connected to the endpoint) will add it to the list.
@@ -208,7 +208,7 @@ Use client-side JS to interact with to your custom API, fetch all pizza toppings
 - In your `public` folder, add a file called `client.js`.
 - Import `client.js` in your `index.html`.
 - When the DOM loads, make a request to `GET /toppings` to get the list of toppings
-- Use this list to generate a <li>'s, and insert these into the innerHTML of a <ul>
+- Use this list to generate a `<li>`'s, and insert these into the innerHTML of a `<ul>`
 
 **Solution**: [14_solution](./workbook/14_solution)
 
@@ -216,7 +216,7 @@ Use client-side JS to interact with to your custom API, fetch all pizza toppings
 **Challenge**:
 Use client-side JS to add an interface to add pizza toppings
 - Start with your code from Challenge 14.
-- Add a <form> with a text <input>. Give the form an `id="topping-form"`, and the input a `name="topping"`
+- Add a `<form>` with a text `<input>`. Give the form an `id="topping-form"`, and the input a `name="topping"`
 - Add an event handler for when the form is submitted, with an event parameter `event`
 - To prevent the page from refreshing (the default behavior for a form), add the line `event.preventDefault()`
 - Use `fetch` to `POST` to the API. To do this, you'll need to add an `options` object:
@@ -237,9 +237,9 @@ const options = { method: "POST",
 **Challenge**:
 Use client-side JS to add an interface to delete pizza toppings
 - Start with your code from Challenge 15.
-- Update `ToppingsList` to add a remove button to each <li>
-- Add an `onclick=removeTopping(event)` to each <button>
-- Add a `data-topping="${topping}"` attribute to each <li>, so that in the onclick handler, we can figure out which topping we are trying to delete
+- Update `ToppingsList` to add a remove button to each `<li>`
+- Add an `onclick=removeTopping(event)` to each `<button>`
+- Add a `data-topping="${topping}"` attribute to each `<li>`, so that in the onclick handler, we can figure out which topping we are trying to delete
 - Write a function called `removeTopping`, which accesses the topping by `event.target.parentElement.dataset.topping`
 - In this function, make a request to `DELETE /toppings/${topping}`. You'll need to add an options object to the fetch request:
 ```js
