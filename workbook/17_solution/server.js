@@ -3,9 +3,7 @@ const path = require("path");
 const app = express();
 const fs = require("fs");
 const fetch = require("isomorphic-unfetch");
-
-const contents = fs.readFileSync(path.join(__dirname, "./config.json"));
-const config = JSON.parse(contents);
+require('dotenv').config();
 
 app.use(express.static("public"));
 
@@ -18,7 +16,7 @@ app.get("/about", (req, res) => {
 });
 
 app.get("/gryffindor", (req, res) => {
-  const url = `https://www.potterapi.com/v1/characters?house=Gryffindor&key=${config.POTTER_API}`;
+  const url = `https://www.potterapi.com/v1/characters?house=Gryffindor&key=${process.env.POTTER_API}`;
   fetch(url).then((apiResponse) => {
     return apiResponse.json();
   }).then((data) => {

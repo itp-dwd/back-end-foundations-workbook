@@ -260,10 +260,13 @@ const options = {
 - Answer the question: Why do APIs have authentication and keys?
 - Copy your code from Challenge 09
 - Delete the folder `data/` and its contents
-- Create a file called `config.json` and add a line to your `.gitignore`: `config.json`
+- Create a file called `.env` and add a line to your `.gitignore`: `.env`
 - Go to the [Harry Potter API](https://www.potterapi.com/) and create an API key.
-- Add it to your `config.json` under the key `"POTTER_API"` (look at `config.example.json` in the solution for reference)
-- Change the line in `server.js` that was reading `pizzaToppings.json` to read `config.json` to fetch the Potter API key
+- Add it to your `.env` under the key `POTTER_API` (look at `.env.example` in the solution for reference), the line should look like `POTTER_API=key_value`
+- Install the library `dotenv` to parse variables from your `.env` file, `npm install --save dotenv`
+- Remove the line in `server.js` that was reading `pizzaToppings.json`
+- Add the line `require('dotenv').config()` to the top of `server.js`
+- Access the Potter API key through `process.env.POTTER_API`
 - Install the library `isomorphic-unfetch` to use `fetch` in Node
 - Create a route called `GET /gryffindor` that fetches all of the characters in Gryffindor from the Potter API. You'll need to use the method `https.get()`, and construct your URL in the same way you would when using `fetch` in the browser. Don't forget to include the API key in the url!
 - Start the server and test that your API endpoint works using Postman.
@@ -279,9 +282,10 @@ const options = {
 - Sometimes you can't make AJAX requests from the browser to certain APIs, when it is enabled, it is called CORS
 - Register for a Twitter API developer account. Create an *individual* account. 
 - Create a Twitter Application. 
-- Create a new file called `config.json`, and add a line to your `.gitignore` that is just `config.json`
-- Add your Twitter credentials to this file. Check the file `config.example.json` for reference
-- Copy and paste your code from example 17 to import your `config.json` file
+- Create a new file called `.env`, and add a line to your `.gitignore` that is just `.env`
+- Add your Twitter credentials to this file. Check the file `.env.example` for reference
+- Install the library `dotenv` to parse variables from your `.env` file, `npm install --save dotenv`
+- Add the line `require('dotenv').config()` to the top of `main.js`
 - Install the npm library `twitter` to make it user to use the Twitter API: `npm install --save twitter`
 - Follow the `twitter` documentation to authenticate with your api tokens
 - Follow the `twitter` documentation to make a tweet from one of the band names
